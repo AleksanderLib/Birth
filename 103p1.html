@@ -1,0 +1,500 @@
+﻿<!--
+ 106-88.html
+ 
+ Copyright 2016 AIvanov <aivanov@aivanov-pc>
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ 
+ 
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>103/У лицевая сторона</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="/Styles/lines.css" />
+<style type="text/css">
+body, * 
+	{
+	padding:0px;
+	margin:0px;
+	font-size:2.8mm;
+	line-height:4.3mm;
+	font-family:Arial, sans-serif;
+	}
+.page
+	{
+	width:188mm;
+	height:270mm;
+	padding:0mm;
+	padding-left:5mm;
+	margin:0 auto;
+	border:1px none red;
+	}
+#page1
+	{
+		height:15mm;
+	}
+.cut 
+{
+	display: none;
+	position:relative;
+	top:204mm;
+	border-top:1px dashed black;
+	width:98%;
+	text-align:center;
+	font-style:italic;
+	font-size:2.6mm;
+}
+.checkbox 
+{
+	width:3.5mm;
+	height:3.8mm;
+	border:1px solid black;
+	text-align:center;
+	display:inline-block;
+	line-height:4mm;
+}
+.l 
+{
+	border-bottom:1px solid black;
+	text-align:center;
+	display:inline-block;
+	margin-left:0.2mm;
+	margin-right:0.2mm;
+	line-height:2.4mm;
+	word-wrap: break-word;
+}
+.p
+{
+	padding-left: 3mm;
+}
+.num
+{
+	font-weight:bold;
+	position:relative;
+	left:0mm;
+	display:inline;
+	float:left;
+	padding:0px;
+}
+table
+{
+	border:1px none black;
+}
+td
+{
+	vertical-align:top;
+}
+.dstable td
+{
+	vertical-align:bottom;
+}
+.small
+{
+	text-align:center;
+	font-size:1.8mm;
+	width:100%;
+	position:relative;
+	top:-1mm;
+	margin-bottom:-2mm;
+}
+.ds
+{
+	text-align:left;
+	font-size:2.2mm;
+}
+.title
+{
+	font-size:5.5mm;
+	text-align:center;
+	line-height:5mm;
+}
+.mark
+{
+	font-weight:bold;
+}
+.stamp
+{
+	border:1px solid black;
+	width:96mm;
+	height:29mm;
+	margin-left:2.5mm;
+	float:left;
+	padding:1mm;
+	font-size:2.6mm;
+	line-height:2.6mm;
+}
+
+.stamp1
+{
+	border:1px solid black;
+	width:78mm;
+	height:29mm;
+	margin-left:2.5mm;
+	float:left;
+	padding:1mm;
+	font-size:2.6mm;
+	line-height:2.6mm;
+}
+.tex
+{
+	font-size:2.6mm;
+	font-weight: bold;
+}
+@media print and (color) {
+	@page {
+    margin: 1cm;
+  }
+}
+
+</style>	
+</head>
+
+<body>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".sex").html(function () {
+    var v = $(this).text();
+    if (__sex == v) $(this).addClass("mark");
+            });
+            $(".m3").html(function () {
+    var v = $(this).text();
+    if (__3 == v) $(this).addClass("mark");
+            });
+            $(".m7").html(function () {
+    var v = $(this).text();
+    if (__7 == v) $(this).addClass("mark");
+            });
+			$(".m4").html(function () {
+    var v = $(this).text();
+    if (__4 == v) $(this).addClass("mark");
+            });
+ 
+            
+			$(".m5").html(function () {
+    var v = $(this).text();
+    if (__5 == v) $(this).addClass("mark");
+            });
+			
+			$(".m8").html(function () {
+    var v = $(this).text();
+    if (__8 == v) $(this).addClass("mark");
+            });
+			
+			$(".m9").html(function () {
+                var v = $(this).text();
+                if (__9 == v) $(this).addClass("mark");
+            });
+
+            $(".m14").html(function () {
+    var v = $(this).text();
+    if (__14 == v) $(this).addClass("mark");
+            });
+
+
+            
+            //$( ".type"+__type ).html("<u>"+v+"</u>");
+
+            // замена отмеченных пунктов на Х
+            $(".mark").html("X");
+        });
+        
+
+        var __sex = '{{Sex}}'; // (1-2) пол пункты 9 и 16
+        var __FIO = '{{FIO}}'; // фио ребёнка
+
+        var __FIOM = '{{FIOM}}'; //ФИО матери
+        var __FIOM1 = '{{FIOM1}}'; //ФИО матери
+        var __FIOM2 = '{{FIOM2}}'; //ФИО матери
+        var __kidsM = '{{KW}}'; //масса
+        var __kidsL = '{{KL}}'; //длина
+        var __nP = '{{NB}}'; // которым по счету ребенок 
+	    var __gW = '{{GW}}'; // Срок первой явки
+
+        var __BDM = '{{DRM}}'; // дата рождения матери ГГГГ-ММ-ДД
+        var __4 = '{{BirthWas}}'; // (1-4) роды произошли пункт 17
+        var __7 = '{{LocL}}'; // (1-2) местность пункт 7
+        var __14 = '{{LocD}}'; // (1-2) местность рожденния пункт 14
+
+        var __3 = '{{PSP}}'; // (1-3) семейное положение
+		var __8 = '{{PAD}}'; // (1-8) образование
+        var __5 = '{{PJOB}}'; // (1-5) занятость
+
+	
+		var __kidsOne = '{{StillBirth_1}}'; //одноплодные
+        var __kidsMul = '{{StillBirth_2}}'; //который по счету
+        var __kidsCA = '{{StillBirth_3}}'; //общее число
+
+        var __bDate = '{{DR3}}'; //дата рождения ГГГГ-ММ-ДД
+        var __dDate = '{{DS3}}'; //дата смерти ГГГГ-ММ-ДД
+        var __DR3g = '{{DR3g}}'; //дата рождения ГГГГ
+        var __DR3m = '{{DR3m}}'; //дата рождения MM
+        var __dr3m2 = '{{dr3m2}}';
+        var __DR3d = '{{DR3d}}'; //дата рождения DD
+        var __Time1 = '{{TIME1}}';
+        var __Time2 = '{{TIME2}}';
+
+        var __svDate = '{{PdateSv}}'; //дата выдачи свидетельства ГГГГ-ММ-ДД
+        var __aO = '{{oblLife}}';
+        var __aR = '{{rayLife}}'; //'Проверка самого длинного названия района Омской области';
+        var __aG = '{{gorLife}}    {{nasLife}}';
+        var __aN = '{{nasLife}}';
+        var __aU = '{{strLife}}';
+        var __aD = '{{homeLife}}';
+        var __aK = '{{roomLife}}';
+        var __aOd = '{{oblBirth}}';
+        var __aRd = '{{rayBirth}}';
+        var __aGd = '{{gorBirth}}   {{nasBirth}}';
+        var __aNd = '{{nasBirth}}';
+
+		var __snils = '{{SS}}';
+		var __Polis = '{{Polis}}';
+		var __DocType = '{{DocType}}';
+		var __DocSerial = '{{DocSerial}}';
+		var __DocNumber = '{{DocNumber}}';
+		var __DocWhoIssue = '{{DocWhoIssue}}';
+		
+		var __NumberSv = '{{NumberSv}}';
+
+
+        function datePrint(dt) {
+            var date1 = new Date();
+            if (dt.length > 0) {
+    date1 = new Date(dt);
+    return [("0" + (date1.getFullYear())).slice(-2), ("0" + (date1.getMonth() + 1)).slice(-2), ("0" + date1.getDate()).slice(-2), date1.getFullYear()];
+            } else {
+    return ["&nbsp;", "&nbsp;", "&nbsp;", "&nbsp;"];
+            }
+}
+
+function dateDiff() {
+    var date1 = new Date();
+    if (__bDate.length > 0) {
+        date1 = new Date(__bDate);
+    }
+    var date2 = new Date();
+    if (__dDate.length > 0) {
+        date2 = new Date(__dDate);
+    } else {
+        __dDate = date2.getFullYear() + '-' + ('0' + (date2.getMonth() + 1)).slice(-2) + '-' + ('0' + date2.getDate()).slice(-2);
+    }
+    var days = date2.getDate() - date1.getDate();
+    if (days < 0) {
+        days += new Date(date2.getFullYear(), date2.getMonth() - 1, 0).getDate() + 1;
+        date2.setMonth(date2.getMonth() - 1);
+    }
+    var months = date2.getMonth() - date1.getMonth();
+    if (months < 0) {
+        months += 12;
+        date2.setFullYear(date2.getFullYear() - 1);
+    }
+    var years = date2.getFullYear() - date1.getFullYear();
+    return [years, months, days, date1.getFullYear(), ("0" + (date1.getMonth() + 1)).slice(-2), ("0" + date1.getDate()).slice(-2), (new Date(__dDate)).getFullYear(), ("0" + ((new Date(__dDate)).getMonth() + 1)).slice(-2), ("0" + (new Date(__dDate)).getDate()).slice(-2)];
+}
+
+        function printText(StringValue) {
+            if (StringValue.length == 0) StringValue = "&nbsp;";
+            return StringValue;
+        }
+        function printTextIDX(StringValue, idx) {
+            if (StringValue.length == 0) StringValue = "";
+            return (StringValue.split(":")[idx].length == 0) ? "&nbsp;" : StringValue.split(":")[idx];
+        }
+        function printMKB10(StringValue) {
+            if (StringValue.length == 0) StringValue = "   . ";
+            var AllString = "";
+            var NewString = "";
+            var s = '<span class="checkbox">';
+            var e = '</span>';
+            for (i = 0; i < StringValue.length; i++) {
+    NewString = StringValue.charAt(i);
+    if (NewString == " ") NewString = "&nbsp;";
+    if (NewString.length > 0) {
+   if (NewString == ".") {
+       AllString += '&nbsp;' + NewString;
+   } else {
+       AllString += '&nbsp;' + s + NewString + e;
+   }
+    }
+            }
+            return AllString;
+        }
+
+        function zeroField(val, numSize) {
+            var outZero = "";
+            var zeroCount = numSize - String(val).length;
+            for (var x = 0; x < zeroCount; ++x) outZero += "0";
+            return outZero + val;
+        }
+        function printBox(StringValue, CountBox) {
+            if (StringValue.length == 0) StringValue = "";
+            var AllString = "";
+            var NewString = "";
+            var s = '<span class="checkbox">';
+            var e = '</span>';
+            StringValue = zeroField(StringValue, CountBox);
+            for (i = 0; i < CountBox; i++) {
+    NewString = StringValue.charAt(i);
+    if (NewString == " ") NewString = "&nbsp;";
+    if (NewString.length > 0) {
+   AllString += '<span style="display:inline-block;width:1px;"></span>' + s + NewString + e;
+    }
+            }
+            return AllString;
+        }
+
+    </script>
+<!-- Первая страница -->
+<div class="page">
+<div class="cut">линия отреза</div>
+<div id="page1"></div>
+
+<div style="clear:both; height:0mm;"></div>
+<div style="width:188mm;padding:0 auto;">
+	<div class="stamp">
+		Наименование медицинской организации (индивидуального предпренимателя,<br/>
+		осуществляющего медицинскую деятельность<br/>
+		<span class="l" style="width:100%"></span><br/>
+		адрес место нахождения  <span class="l"></span><br/>
+		Код по ОКПО<br/>
+		Номер и дата выдачи лицензии на осуществление медицинской деятельности:<br/>
+        <span class="l" style="width:100%"></span><br/>
+		
+	</div>
+	<div class="stamp1">
+		Код формы по ОКУД<br/>		
+		Медицинская документация<br/>
+        <br/>
+		Учетная Форма № 103/у<br/>
+		Утверждена приказом Минздрав России<br/>
+		от «__» _________ 2021 г. №___<br/>
+	</div>
+</div>
+
+<div class="title">
+<div style="clear:both; height:25mm;"></div>
+
+<div class = "tex"> <span style="display: block" ><span style="margin: 0mm 18mm 0 28mm"> 52</span> <script> document.write(printText(__NumberSv)); </script></span></div>
+<div style="font-weight: bold">Дата выдачи «<span class="l w10"><script>document.write(datePrint(__svDate)[2]);</script></span>» <span class="l w27"><script>document.write(datePrint(__svDate)[1]);</script></span> 20<span class="l w10"><script>document.write(datePrint(__svDate)[0]);</script></span>г.</div>
+</div><br/>
+<div class="num">1.</div><div class="p">Ребёнок родился: число <span class="l w20"><script>document.write(__DR3d == 'XX' ? __DR3d : dateDiff()[5]);</script></span>, месяц <span class="l w20"><script>document.write(__dr3m2 == 'XX' ? __DR3m : dateDiff()[4]);</script></span>, год <span class="l w20"><script>document.write(__DR3g == 'GGGG' ? dateDiff()[3] : __DR3g);</script></span>, час <span class="l w20"><script>document.write(printText(__Time1));</script></span>, мин <span class="l w20"><script>document.write(printText(__Time2));</script></span></div>
+<br/>
+<div>
+
+</div>
+	<div style="width:90mm;float:left;border-right:1mm solid black;">
+		<div style="text-align:center;">Мать</div>
+<div class="num">2.</div><div class="p">Фамилия, имя, отчество <span class="l w51"><script>   document.write(printText(__FIOM));</script></span>
+<br/>
+<span class="l w82">&nbsp;</span></div>
+<div class="num">3.</div><div class="p">
+	<table>
+		<tr>
+			<td>Дата рождения</td>
+			<td><script>document.write(printBox(datePrint(__BDM)[2], 2));</script><div class="small">число</div></td>
+			<td><script>document.write(printBox(datePrint(__BDM)[1], 2));</script><div class="small">месяц</div></td>
+			<td><script>document.write(printBox(datePrint(__BDM)[3], 4));</script><div class="small">год</div></td>
+		</tr>
+	</table>
+</div>
+<div class="num">4.</div><div class="p">Документ, удостоверяющий
+<br>личность:<span class="l w20"><script> document.write(printText(__DocType));</script></span> 
+серия <span class="l w10"><script> document.write(printText(__DocSerial));</script></span>
+<br>номер <span class="l w15"><script> document.write(printText(__DocNumber));</script></span> 
+кем и когда выдан <span class="l w30"><script> document.write(printText(__DocWhoIssue));</script></span>
+<br/>
+<span class="l w82">&nbsp;</span>
+</div>
+<div class="num">5.</div><div class="p">СНИЛС <span class="l w74"><script> document.write(printText(__snils));</script></span></div>
+<div class="num">6.</div><div class="p">Полис ОМС <span class="l w68"><script> document.write(printText(__Polis));</script></span> </div>
+
+<div class="num">7.</div><div class="p">Регистрация по месту жительства(пребывания): <br/>
+ субъект Российской Федерации <span class="l w42"><script> document.write(printText(__aO));</script></span> <br />
+ район <span class="l w76"><script> document.write(printText(__aR));</script></span><br/>
+ город <span class="l w77"><script>   document.write(printText(__aG));</script></span><br/>
+ населённый пункт <span class="l w60"><script> document.write(printText(__aN));</script></span><br/>
+ улица <span class="l w78"><script> document.write(printText(__aU));</script></span><br/> дом <span class="l w10"><script> document.write(printText(__aD));</script></span>
+ стр. <span class="l w10"></span> корп. <span class="l w10"></span>
+ кв. <span class="l w10"><script>       document.write(printText(__aK));</script></span></div>
+
+ <div class="num">8.</div><div class="p">Местность: городская <span class="checkbox m14">1</span>, сельская <span class="checkbox m14">2</span></div>
+ <div class="num">9.</div><div class="p">Семейное положение: состоит в зарегистрированном браке <span class="checkbox m3">1</span>, не состоит в зарегистрированном браке <span class="checkbox m3">2</span>, неизвестно <span class="checkbox m3">3</span>.</div>
+ <div class="num">10.</div><div class="p">Образование профессиональное: вышее <span class="checkbox m8">1</span>,<br/>неполное высшее<span class="checkbox m8">2</span>, среднее профуссиональное <span class="checkbox m8">3</span>,<br/>
+ общее: среднее <span class="checkbox m8">4</span>,основное <span class="checkbox m8">5</span>, начальное <span class="checkbox m8">6</span>,<br/>
+ не имеет начального образования <span class="checkbox m8">7</span>, неизвестно <span class="checkbox m8">8</span></div>
+ <div class="num">11.</div><div class="p"> Занятость: работала <span class="checkbox m5">1</span>, проходила военную или приравненную к ней службу <span class="checkbox m5">2</span>, студенкта <span class="checkbox m5">3</span>,
+ не работала <span class="checkbox m5">4</span>, прочее <span class="checkbox m5">5</span></div>
+
+ </div>
+
+	
+	<div style="width:90mm;float:left;">
+		
+<div class="num">12.</div><div class="p">Срок первой явки к врачу <br />(фельдшеру, акушерке)<script>document.write(printBox(__gW, 2));</script></div>
+<div class="num">13.</div><div class="p">Которым по счету ребенок был рожден у матери<script>document.write(printBox(__nP, 2));</script></div>
+<div style="text-align:center;">Ребенок</div>
+        <div style="margin-left:5mm;">		
+<div class="num">14.</div><div class="p">Фамилия ребенка<span class="l w57"><script>     document.write(printText(__FIO));</script></span><br/>
+<span class="l w82">&nbsp;</span></div>
+<div class="num">15.</div><div class="p">Место рождения:<br/>
+субъект Российской Федерации <span class="l w37"><script> document.write(printText(__aO));</script></span> <br />
+ район <span class="l w72"><script> document.write(printText(__aR));</script></span><br/>
+ город <span class="l w73"><script>   document.write(printText(__aG));</script></span><br/>
+ населённый пункт <span class="l w57"><script> document.write(printText(__aN));</script></span><br/>
+ улица <span class="l w73"><script> document.write(printText(__aU));</script></span><br/> дом <span class="l w10"><script> document.write(printText(__aD));</script></span>
+ стр. <span class="l w10"></span> корп. <span class="l w10"></span>
+ кв. <span class="l w10"><script>       document.write(printText(__aK));</script></span></div><div class="num">16.</div><div class="p">Местность: городская <span class="checkbox m14">1</span> сельская <span class="checkbox m14">2</span></div>
+ <div class="num">17.</div><div class="p">Роды произошли: в стационаре <span class="checkbox m4">1</span>, <br/>
+дома <span class="checkbox m4">2</span>, в другом месте <span class="checkbox m4">3</span>, неизвестно <span class="checkbox m4">4</span></div>
+<div class="num">18.</div><div class="p">Пол: мальчик <span class="checkbox sex">1</span>, девочка <span class="checkbox sex">2</span></div>
+<div class="num">19.</div><div class="p"> Масса тела ребенка при рождении(г)<script>document.write(printBox(__kidsM, 4));</script></div>
+<div class="num">20.</div><div class="p"> Длина тела ребенка при рождении(см)<script>document.write(printBox(__kidsL, 4));</script></div>
+<div class="num">21.</div><div class="p">Ребёнок родился:<br/> при одноплодных родах <script>document.write(printBox(__kidsOne, 1));</script><br/> при многоплодных родах:</div>
+<div class="p">которым по счёту<script>document.write(printBox(__kidsMul, 1));</script><br/> число родившихся детей<script>document.write(printBox(__kidsCA, 1));</script></div><br/>
+
+	 </div>
+	 	 </div>
+		 <div style="clear:both; height: 20mm;"></div>
+		 <div class="title">
+		 
+		 <div class = "tex"> <span style="display: block" ><span style="margin: 0mm 18mm 0 28mm"> 52</span> <script> document.write(printText(__NumberSv)); </script></span></div>
+<div style="font-weight: bold">Дата выдачи «<span class="l w10"><script>document.write(datePrint(__svDate)[2]);</script></span>» <span class="l w27"><script>document.write(datePrint(__svDate)[1]);</script></span> 20<span class="l w10"><script>document.write(datePrint(__svDate)[0]);</script></span>г.</div>
+</div><br/>
+<div class="num">1.</div><div class="p">Ребёнок родился: число <span class="l w20"><script>document.write(__DR3d == 'XX' ? __DR3d : dateDiff()[5]);</script></span>, месяц <span class="l w20"><script>document.write(__dr3m2 == 'XX' ? __DR3m : dateDiff()[4]);</script></span>, год <span class="l w20"><script>document.write(__DR3g == 'GGGG' ? dateDiff()[3] : __DR3g);</script></span>, час <span class="l w20"><script>document.write(printText(__Time1));</script></span>, мин <span class="l w20"><script>document.write(printText(__Time2));</script></span></div>
+<div class="num">2.</div><div class="p">Фамилия, имя, отчество матери <span class="l w131"><script>document.write(printText(__FIOM));</script></span></div>
+<div class="num">3.</div><div class="p">Дата рождения матери: число <span class="l w20"><script>document.write(datePrint(__BDM)[2]);</script></span>, месяц <span class="l w27"><script>document.write(datePrint(__BDM)[1]);</script></span>, год <span class="l w20"><script>  document.write(datePrint(__BDM)[3]);</script></span></div>
+<div class="num">4.</div><div class="p">Регистрация по месту жительства(пребывания): <br/>
+субъект Российской Федерации <span class="l w74"><script> document.write(printText(__aO));</script></span> <br />
+ район <span class="l w74"><script> document.write(printText(__aR));</script></span>
+ город <span class="l w66"><script>   document.write(printText(__aG));</script></span><br/>
+ населённый пункт <span class="l w74"><script> document.write(printText(__aN));</script></span>
+ улица <span class="l w38"><script> document.write(printText(__aU));</script></span><br/>
+ дом <span class="l w10"><script> document.write(printText(__aD));</script></span>
+ стр. <span class="l w10"></span> корп. <span class="l w10"></span>
+ кв. <span class="l w10"><script>       document.write(printText(__aK));</script></span></div>
+<div class="num">5.</div><div class="p">Местность: городская <span class="checkbox m7">1</span>, сельская <span class="checkbox m7">2</span></div>
+<div class="num">6.</div><div class="p">Пол: мальчик <span class="checkbox sex">1</span>, девочка <span class="checkbox sex">2</span></div>
+	</div>
+	</div>
+<div style="clear:both;height:5mm;"></div
+
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+﻿<!--
+ 106-88.html
+ 
+ Copyright 2016 AIvanov <aivanov@aivanov-pc>
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ 
+ 
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>103/У оборотная сторона</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="/Styles/lines.css">
+<style type="text/css">
+body, * 
+	{
+	padding:0px;
+	margin:0px;
+	font-size:2.8mm;
+	line-height:4.3mm;
+	font-family:Arial, sans-serif;
+	}
+.page
+	{
+	width:188mm;
+	height:270mm;
+	padding:0mm;
+	padding-left:5mm;
+	margin:0 auto;
+	border:1px none red;
+	}
+#page1
+	{
+		height:20mm;
+	}
+.cut 
+{
+	position:relative;
+	top:204mm;
+	border-top:1px dashed black;
+	width:98%;
+	text-align:center;
+	font-style:italic;
+	font-size:2.6mm;
+}
+.checkbox 
+{
+	width:3.5mm;
+	height:3.8mm;
+	border:1px solid black;
+	text-align:center;
+	display:inline-block;
+	line-height:4mm;
+}
+.l 
+{
+	border-bottom:1px solid black;
+	text-align:center;
+	display:inline-block;
+	margin-left:0.2mm;
+	margin-right:0.2mm;
+	line-height:2.4mm;
+	word-wrap: break-word;
+}
+.p
+{
+	padding-left: 3mm;
+}
+.num
+{
+	font-weight:bold;
+	position:relative;
+	left:0mm;
+	display:inline;
+	float:left;
+	padding:0px;
+}
+table
+{
+	border:1px none black;
+}
+td
+{
+	vertical-align:top;
+}
+.dstable td
+{
+	vertical-align:bottom;
+}
+.small
+{
+	text-align:center;
+	font-size:1.8mm;
+	width:100%;
+	position:relative;
+	top:-1mm;
+	margin-bottom:-2mm;
+}
+.ds
+{
+	text-align:left;
+	font-size:2.2mm;
+}
+.title
+{
+	font-size:5.5mm;
+	text-align:center;
+	line-height:5mm;
+}
+.mark
+{
+	font-weight:bold;
+}
+.stamp
+{
+	border:1px solid black;
+	width:83mm;
+	height:40mm;
+	margin-left:2.5mm;
+	float:left;
+	padding:1mm;
+	font-size:2.6mm;
+	line-height:2.6mm;
+}
+@media print and (color) {
+	@page {
+    margin: 1cm;
+  }
+}
+
+</style>	
+</head>
+
+<body>
+	<script src="jquery-1.12.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".m21").html(function () {
+                var v = $(this).text();
+                if (__21 == v) $(this).addClass("mark");
+            });
+            $(".m22").html(function () {
+                var v = $(this).text();
+                if (__22 == v) $(this).addClass("mark");
+            });
+            $(".m24").html(function () {
+                var v = $(this).text();
+                if (__24 == v) $(this).addClass("mark");
+            });
+            $(".m9").html(function () {
+                var v = $(this).text();
+                if (__9 == v) $(this).addClass("mark");
+            });
+            $(".m10").html(function () {
+                var v = $(this).text();
+                if (__10 == v) $(this).addClass("mark");
+            });
+            $(".m3").html(function () {
+                var v = $(this).text();
+                if (__3 == v) $(this).addClass("mark");
+            });
+            // замена отмеченных пунктов на Х
+            $(".mark").html("X");
+        });
+
+        var __22 = '{{FaceTakeBirth}}'; // (1-3) лицо принимавшее роды
+        var __nR = '{{NumberKid}}'; //который по счету
+        var __Doctor = '{{FIO_Doctor}}';
+        var __Position = '{{Post_Doctor}}';
+        var __recipient = '{{PRecipientFIO}}';
+        var __recipientdoc = '{{PRecipientDocData}}';
+        var __recipientdocpol = '{{PRecipientDocPol}}';
+        var __nP = '{{NB}}'; // которые роды
+        var __gW = '{{GW}}'; // которые роды
+        var __kidsM = '{{KW}}'; //масса
+        var __kidsL = '{{KL}}'; //длина
+        var __9 = '{{PAD}}'; // (1-9) образование
+        var __10 = '{{PJOB}}'; // (1-10) занятость
+
+        var __3 = '{{BirthWas}}'; // (1-4) роды произошли пункт 3
+
+
+        var __kidsOne = '{{StillBirth_1}}'; //одноплодные
+        var __kidsMul = '{{StillBirth_2}}'; //который по счету
+        var __kidsCA = '{{StillBirth_3}}'; //общее число
+
+
+        function datePrint(dt) {
+            var date1 = new Date();
+            if (dt.length > 0) {
+                date1 = new Date(dt);
+                return [("0" + (date1.getFullYear())).slice(-2), ("0" + (date1.getMonth() + 1)).slice(-2), ("0" + date1.getDate()).slice(-2)];
+            } else {
+                return ["&nbsp;", "&nbsp;", "&nbsp;"];
+            }
+        }
+
+        function printText(StringValue) {
+            if (StringValue.length == 0) StringValue = "&nbsp;";
+            return StringValue;
+        }
+        function printTextIDX(StringValue, idx) {
+            if (StringValue.length == 0) StringValue = "";
+            return (StringValue.split(" ")[idx].length == 0) ? "&nbsp;" : StringValue.split(" ")[idx];
+        }
+        function printMKB10(StringValue) {
+            if (StringValue.length == 0) StringValue = "   . ";
+            var AllString = "";
+            var NewString = "";
+            var s = '<span class="checkbox">';
+            var e = '</span>';
+            for (i = 0; i < StringValue.length; i++) {
+                NewString = StringValue.charAt(i);
+                if (NewString == " ") NewString = "&nbsp;";
+                if (NewString.length > 0) {
+                    if (NewString == ".") {
+                        AllString += '&nbsp;' + NewString;
+                    } else {
+                        AllString += '&nbsp;' + s + NewString + e;
+                    }
+                }
+            }
+            return AllString;
+        }
+
+        function zeroField(val, numSize) {
+            var outZero = "";
+            var zeroCount = numSize - String(val).length;
+            for (var x = 0; x < zeroCount; ++x) outZero += "0";
+            return outZero + val;
+        }
+
+
+        function printBox(StringValue, CountBox) {
+            if (StringValue.length == 0) StringValue = "";
+            var AllString = "";
+            var NewString = "";
+            var s = '<span class="checkbox">';
+            var e = '</span>';
+            StringValue = zeroField(StringValue, CountBox);
+            for (i = 0; i < CountBox; i++) {
+                NewString = StringValue.charAt(i);
+                if (NewString == " ") NewString = "&nbsp;";
+                if (NewString.length > 0) {
+                    AllString += '<span style="display:inline-block;width:1px;"></span>' + s + NewString + e;
+                }
+            }
+            return AllString;
+        }
+
+    </script>
+
+<!-- Оборотная сторона -->
+<div class="page">
+<div class="cut">линия отреза</div>
+<div style="clear:both; height:10mm;"></div>
+<div class="num">22.</div><div class="p">Лицо, принимавшее роды: врач-акушер-гинеколог <span class="checkbox m22">1</span>, фельдшер, акушерка <span class="checkbox m22">2</span>, другое лицо<span class="checkbox m22">3</span></div>
+<br />
+<div class="num">23.</div><div class="p">
+<table>
+	 <tr>
+		 <td>
+			 <span class="l w60"><script>document.write(printText(__Position));</script></span>
+			<div class="small">Должность врача (фельдшера, акушерки), выдавшего<br> медицинское свидетельство</div>
+		</td>
+		<td>
+			<span class="l w46">&nbsp;</span>
+			<div class="small">подпись</div>
+		</td>
+		<td>
+			<span class="l w58"><script>document.write(printText(__Doctor));</script></span>
+			<div class="small">(фамилия, имя, отчество)</div>
+		</td>
+</table>
+</div>
+<br /><br /><br />
+<div class="p">
+<table>
+	 <tr>
+		 <td style="width:100%;">
+			Руководитель медицинской организации,<br/>частнопрактикующий врач (подчеркнуть)
+		</td>
+		<td style="vertical-align:bottom;width:28mm;">
+			<span class="l w27"></span>
+			<div class="small">подпись</div>
+		</td>
+		<td style="vertical-align:bottom;width:69mm;">
+			<span class="l w68"></span>
+			<div class="small">(фамилия, имя, отчество)</div>
+		</td>
+    </tr>
+</table>
+<br/>
+Печать</div>
+<div style="clear:both; height:140mm;"></div>
+<br>
+<div class="num">7.</div><div class="p">Роды произошли: в стационаре <span class="checkbox m3">1</span>,
+дома <span class="checkbox m3">2</span>, в другом месте <span class="checkbox m3">3</span>, неизвестно <span class="checkbox m3">4</span></div><br/>
+
+<div class="num">8.</div><div class="p">
+<table>
+	 <tr>
+		 <td>
+			 <span class="l w60"><script>document.write(printText(__Position));</script></span>
+			<div class="small">Должность врача (фельдшера, акушерки), выдавшего<br> медицинское свидетельство</div>
+		</td>
+		<td>
+			<span class="l w46">&nbsp;</span>
+			<div class="small">подпись</div>
+		</td>
+		<td>
+			<span class="l w58"><script>document.write(printText(__Doctor));</script></span>
+			<div class="small">фамилия, имя, отчество</div>
+		</td>
+</table>
+</div>
+<div class="num">9.</div><div class="p">Получатель<br/>
+<span class="l w170"><script>document.write(printText(__recipient));</script></span><div class="small">Фамилия, имя, отчество и отношение ребенку</div>
+<span class="l w170"><script>document.write(printText(__recipientdoc));</script></span><div class="small">(документ, удостоверяющий личность получателя, серия, номер, кем выдан;</div>
+<span class="l w170"><script>document.write(printText(__recipientdocpol));</script></span><div class="small">(документ, удостоверяющий полномочия получателя)</div>
+<table style="width:100%">
+	<tr>
+		<td style="width:35%">«<span class="l w10"></span>» <span class="l w27"></span> 20<span class="l w10"></span> г.</td>
+		<td style="width:65%;text-align:center;">Подпись получателя<span class="l w55"></span><div class="small">подпись</div></td>
+	</tr>
+</table>
+</div>
+</div>
+<div style="clear:both; height:4mm;"></div>
+</body>
+
+</html>
